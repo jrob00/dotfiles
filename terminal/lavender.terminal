@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BackgroundColor</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPECsw
+	LjM4MDM5MjE5MzggMC40OTQxMTc2NzcyIDAuNjc0NTA5ODIzMyAwLjgAEAKAAtIQERIT
+	WiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xvcqISFFhOU09iamVjdF8QD05TS2V5ZWRB
+	cmNoaXZlctEXGFRyb290gAEIERojLTI3O0FITltikJKUmaSttbjB09bbAAAAAAAAAQEA
+	AAAAAAAAGQAAAAAAAAAAAAAAAAAAAN0=
+	</data>
+	<key>CursorColor</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPEB4w
+	LjA3MzUyNjYyOTIgMC4xNDMwNTAyOTcyIDAuNQAQAYAC0hAREhNaJGNsYXNzbmFtZVgk
+	Y2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hpdmVy0RcYVHJv
+	b3SAAQgRGiMtMjc7QUhOW2KDhYeMl6Coq7TGyc4AAAAAAAABAQAAAAAAAAAZAAAAAAAA
+	AAAAAAAAAAAA0A==
+	</data>
+	<key>Font</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5TU2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNs
+	YXNzI0AqAAAAAAAAEBCAAoADW0luY29uc29sYXRh0hMUFRZaJGNsYXNzbmFtZVgkY2xh
+	c3Nlc1ZOU0ZvbnSiFRdYTlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRGhtUcm9vdIAB
+	CBEaIy0yNzxCS1JbYmlydHZ4hImUnaSnsMLFygAAAAAAAAEBAAAAAAAAABwAAAAAAAAA
+	AAAAAAAAAADM
+	</data>
+	<key>ProfileCurrentVersion</key>
+	<real>2.02</real>
+	<key>ShowShellCommandInTitle</key>
+	<false/>
+	<key>ShowTTYNameInTitle</key>
+	<false/>
+	<key>ShowWindowSettingsNameInTitle</key>
+	<false/>
+	<key>TextColor</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NGMSAx
+	IDEAEAGAAtIQERITWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xvcqISFFhOU09iamVj
+	dF8QD05TS2V5ZWRBcmNoaXZlctEXGFRyb290gAEIERojLTI3O0FITltiaWttcn2GjpGa
+	rK+0AAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAALY=
+	</data>
+	<key>columnCount</key>
+	<integer>180</integer>
+	<key>name</key>
+	<string>Jason's Default</string>
+	<key>rowCount</key>
+	<integer>42</integer>
+	<key>shellExitAction</key>
+	<integer>1</integer>
+	<key>type</key>
+	<string>Window Settings</string>
+</dict>
+</plist>

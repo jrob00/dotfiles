@@ -1,0 +1,10 @@
+
+# bedazzled bash prompt (combined solution)
+# http://railstips.org/blog/archives/2009/02/02/bedazzle-your-bash-prompt-with-git-info/
+# http://techcommons.stanford.edu/topics/git/show-git-branch-bash-prompt
+
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+PS1="\h:\w \$(parse_git_branch)\$ "

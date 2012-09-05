@@ -1,0 +1,56 @@
+
+Editor: MacVim
+
+Shell: Zsh
+
+Irb: Pry
+
+Color Scheme: Solarized
+
+-------
+
+Install brew
+
+/usr/bin/ruby <(curl -fsSk https://raw.github.com/mxcl/homebrew/go)
+
+
+Install some brew packages
+
+brew install ack ctags git hub macvim
+
+
+Zsh
+
+git clone --recursive git://github.com/sorin-ionescu/prezto.git ~/.oh-my-zsh
+
+
+fasd ..interesting: https://github.com/clvv/fasd
+
+
+Completion
+
+brew install git-completion
+
+
+-------
+
+different things:
+
+declare aliases
+setup symlinks
+install files
+
+
+= Two options for setting up
+
+Topic centric
+ - git
+   - .aliases
+   - .symlinks
+ - clover
+ - brew
+
+Function centric
+ - aliases
+ - symlinks
+ - installation
