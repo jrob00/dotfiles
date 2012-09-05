@@ -2,7 +2,14 @@
 
 # git clone https://github.com/mathiasbynens/dotfiles.git && cd dotfiles && ./bootstrap.sh
 
-cd "$(dirname "$0")"
+sudo -v
+
+BASEDIR=$(dirname $0)
+#echo $BASEDIR
+cd "$BASEDIR"
+
+
+# update our repo
 git pull
 
 
@@ -10,6 +17,12 @@ git pull
 # copy system/ files: bash_profile, bash_prompt, inputrc to ~/"."filename
 # append function, path to ~/.bash_profile
 # copy ssh-config to ~/.ssh/config
+
+
+sudo cp -f ../.bash_profile ~/
+sudo cp -f ../.bash_prompt ~/
+sudo cp -f ../.inputrc ~/
+exit
 
 
 

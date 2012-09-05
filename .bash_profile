@@ -43,6 +43,14 @@ fi
 
 
 
+# File manipulation
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+
+
 
 # Detect which `ls` flavor is in use
 
