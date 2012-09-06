@@ -1,4 +1,10 @@
+# Dotfile deployment
+
 alias reload='source ~/.bash_profile'
+alias updaterepos='~/Sites/Clover/Server-Assets/Local\ Files/update-all-repositories.sh'
+alias updateprofile='(cd ~/Sites/Personal/dotfiles/ && git pull && sudo cp -f .bash_profile ~/); reload'
+alias updatessh='(cd ~/Sites/Personal/dotfiles/ && git pull && cp -f .ssh/config ~/.ssh/); (cd ~/Sites/Clover/Server-Assets/ && git pull && cat Local\ Files/ssh.config >> ~/.ssh/config)'
+
 
 
 # Easier navigation: .., ..., ...., ....., and -
@@ -155,8 +161,6 @@ export PATH=$PATH:/Applications/MAMP/Library/bin
 
 
 ### clover aliases
-
-alias update='~/Sites/Clover/Server-Assets/Local\ Files/update-all-repositories.sh'
 
 # top level
 alias Clover='cd ~/Sites/Clover'
