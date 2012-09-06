@@ -24,14 +24,14 @@ alias projects="cd ~/Projects"
 
 alias f='open -a Finder '
 alias fh='open -a Finder .'
-alias photoshop="open -a '/Applications/Adobe Photoshop CS3/Adobe Photoshop.app'"
-alias preview="open -a '$PREVIEW'"
+alias photoshop="open -a '/Applications/Adobe Photoshop CS5.1/Adobe Photoshop CS5.1.app'"
+alias preview="open -a '/Applications/Preview.app'"
 alias xcode="open -a '/Developer/Applications/Xcode.app'"
 alias filemerge="open -a '/Developer/Applications/Utilities/FileMerge.app'"
 alias safari="open -a safari"
 alias firefox="open -a firefox"
 alias chrome="open -a google\ chrome"
-alias chromium="open -a chromium"
+alias canary="open -a google\ chrome\ canary"
 alias subl='open -a /Applications/Sublime\ Text\ 2.app'
 
 export EDITOR='subl'
@@ -112,6 +112,22 @@ mysqld() {
     fi
 }
 
+down4me() {
+    # checks whether a website is down for you, or everybody
+    # example '$ down4me http://www.google.com'
+    curl -s "http://www.downforeveryoneorjustme.com/$1" | sed '/just you/!d;s/<[^>]*>//g'
+}
+
+pmdown () {
+    # preview markdown file in a browser
+    # example '$ pmdown README.md'
+    if command -v markdown &>/dev/null
+    then
+      markdown $1 | canary
+    else
+      echo "You don't have a markdown command installed!"
+    fi
+}
 
 
 
@@ -199,6 +215,10 @@ alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 
+# List hosts defined in ssh config
+alias showhosts="awk '$1 ~ /Host$/ { print $2 }' ~/.ssh/config"
+
+
 
 
 ### osx aliases
@@ -210,4 +230,26 @@ alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/La
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
+
+
+
+
+### xterm
+
+set_xterm_title () {
+    local title="$1"
+    echo -ne "\e]0;$title\007"
+}
+
+precmd () {
+    set_xterm_title "${USER}@${HOSTNAME} `dirs -0` $PROMPTCHAR"
+}
+
+preexec () {
+    set_xterm_title "$1 {`dirs -0`} (${USER}@${HOSTNAME})"
+}
+
+case "$TERM" in
+    xterm*|rxvt*) preexec_install;;
+esac
 

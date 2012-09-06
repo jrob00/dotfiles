@@ -22,6 +22,11 @@ git pull
 sudo cp -f ../.bash_profile ~/
 sudo cp -f ../.bash_prompt ~/
 sudo cp -f ../.inputrc ~/
+
+sudo cp -f ../.gitconfig ~/
+sudo cp -f ../.gitignore ~/
+sudo cp -f ../.gitattributes ~/
+
 exit
 
 
@@ -29,17 +34,11 @@ exit
 # step two
 # append all .aliases to ~/.bash_profile
 
-
-
 # step three
 # copy files in /bin to ~/.bin
 
-
-
 # step four
 # append all .ssh-config to ~/.ssh/config
-
-
 
 # copy .terminal files to ?
 
