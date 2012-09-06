@@ -46,6 +46,7 @@ brew install node
 #brew install rename
 #brew install rhino
 #brew install tree
+brew install markdown
 
 # web pages as screenshots: http://www.paulhammond.org/webkit2png/
 brew install webkit2png
