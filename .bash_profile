@@ -1,9 +1,11 @@
 # Dotfile deployment
 
 alias reload='source ~/.bash_profile'
+alias installclover='bash < <(curl -fsSkL https://raw.github.com/gist/050df7646f8fa704d753)'
 alias updaterepos='~/Sites/Clover/Server-Assets/Local\ Files/update-all-repositories.sh'
 alias updateprofile='(cd ~/Sites/Personal/dotfiles/ && git pull && sudo cp -f .bash_profile ~/); reload'
 alias updatessh='(cd ~/Sites/Personal/dotfiles/ && git pull && cp -f .ssh/config ~/.ssh/); (cd ~/Sites/Clover/Server-Assets/ && git pull && cat Local\ Files/ssh.config >> ~/.ssh/config)'
+
 
 
 
@@ -21,9 +23,12 @@ alias www='cd /var/www'
 alias log='cd /var/www/log'
 alias html='cd /var/www/html'
 alias apache='cd /etc/httpd/conf.d'
+alias dotfiles='cd ~/Sites/Personal/dotfiles'
 
 alias dropbox="cd ~/Dropbox"
 alias projects="cd ~/Projects"
+
+
 
 
 # Application shortcuts
