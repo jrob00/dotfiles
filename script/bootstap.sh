@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# git clone https://github.com/mathiasbynens/dotfiles.git && cd dotfiles && ./bootstrap.sh
+# git clone https://github.com/jrob00/dotfiles.git && cd dotfiles && ./bootstrap.sh
 
 sudo -v
 
