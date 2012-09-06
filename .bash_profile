@@ -129,6 +129,12 @@ pmdown () {
     fi
 }
 
+# List hosts defined in ssh config
+showhosts() {
+    awk '$1 ~ /Host$/ { print $2 }' ~/.ssh/config
+}
+
+
 
 
 ### rvm
@@ -215,9 +221,6 @@ alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 
-# List hosts defined in ssh config
-alias showhosts="awk '$1 ~ /Host$/ { print $2 }' ~/.ssh/config"
-
 
 
 
@@ -231,25 +234,4 @@ alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/La
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
 
-
-
-
-### xterm
-
-set_xterm_title () {
-    local title="$1"
-    echo -ne "\e]0;$title\007"
-}
-
-precmd () {
-    set_xterm_title "${USER}@${HOSTNAME} `dirs -0` $PROMPTCHAR"
-}
-
-preexec () {
-    set_xterm_title "$1 {`dirs -0`} (${USER}@${HOSTNAME})"
-}
-
-case "$TERM" in
-    xterm*|rxvt*) preexec_install;;
-esac
 
