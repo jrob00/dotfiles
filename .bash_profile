@@ -2,8 +2,8 @@
 
 alias reload='source ~/.bash_profile'
 alias installclover='bash < <(curl -fsSkL https://raw.github.com/gist/050df7646f8fa704d753)'
-alias updaterepos='~/Sites/Clover/Server-Assets/Local\ Files/update-all-repositories.sh'
-alias updateprofile='(cd ~/Sites/Personal/dotfiles/ && git pull && sudo cp -f .bash_profile ~/); reload'
+alias updaterepos='~/Sites/Clover/Server-Assets/Local\ Files/bin/update-all-repositories.sh'
+alias updateshell='(cd ~/Sites/Personal/dotfiles/ && git pull && sudo cp -f .bash_profile ~/); reload'
 alias updatessh='(cd ~/Sites/Personal/dotfiles/ && git pull && cp -f .ssh/config ~/.ssh/); (cd ~/Sites/Clover/Server-Assets/ && git pull && cat Local\ Files/ssh.config >> ~/.ssh/config)'
 
 
