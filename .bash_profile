@@ -244,3 +244,11 @@ alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && kill
 alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
 
 
+
+
+### bash completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
+
