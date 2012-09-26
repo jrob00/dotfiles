@@ -20,6 +20,7 @@ git pull
 
 
 sudo cp -f ../.bash_profile ~/
+sudo ln -s ~/.bash_profile ~/.profile
 sudo cp -f ../.bash_prompt ~/
 sudo cp -f ../.inputrc ~/
 

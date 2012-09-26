@@ -34,6 +34,8 @@ brew install homebrew/dupes/grep
 #brew tap josegonzalez/homebrew-php
 #brew install php54
 
+#brew install mysql
+
 # These two formulae didn’t work well last time I tried them:
 #brew install homebrew/dupes/vim
 #brew install homebrew/dupes/screen
