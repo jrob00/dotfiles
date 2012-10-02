@@ -1,0 +1,57 @@
+
+# Step 1: Install Me
+# $ curl -L https://raw.github.com/gist/050df7646f8fa704d753 | bash
+
+
+# clover commands:
+# 
+# clover init - the installation script, run again to update with new commands or to add repositories
+# clover repos - displays the names of all clover repositories
+# clover status - displays the git status of each clover repository
+# clover update - updates all the installed clover repositories and outputs a status
+# clover hosts - displays the nicknames for all clover server hosts
+# clover deploy - calls the deploy webhook that launches code
+# clover build - calls the build webhook that executes server commands
+# clover delete - removes this script and all repositories
+
+clover() {
+	
+    if [[ $@ == "init" ]]; then
+    	
+    	# run the installation script and make sure all the config is fresh
+        
+    elif [[ $@ == "repos" ]]; then
+    	
+    	command echo "This will show the installed local repos";
+    
+    elif [[ $@ == "status" ]]; then
+    	
+    	# $ git fetch origin
+    	# 
+    	# parse:
+    	# Your branch is behind 'origin/master' by 2 commits, and can be fast-forwarded.
+    	#
+    	command echo "This will one day show the status of each local repository";
+    	
+    elif [[ $@ == "update" ]]; then
+    	
+    	# update the installed clover repositories
+        command ~/Sites/Clover/Server-Assets/Local\ Files/bin/update-all-repositories.sh;
+        
+    elif [[ $@ == "hosts" ]]; then
+    	
+        command awk '$1 ~ /Host$/ { print $2 }' ~/.ssh/config;
+        
+    elif [[ $@ == "deploy" ]]; then
+    	
+    	# how to regulate access here?
+    	# ssh key would be best
+    	# ssh devdonations /var/www/bin/deploy $1 to $2
+    	commadn echo "This will one day deploy code :)";
+        
+    elif [[ $@ == "delete" ]]; then
+    	
+    	command echo "Are you sure you wish to uninstall all Clover Dev scripts and repos?";
+        
+    fi
+}

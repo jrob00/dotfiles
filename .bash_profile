@@ -92,18 +92,26 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
 
-
 # Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
 # (useful when executing time-consuming commands)
 alias badge="tput bel"
-
-# Requires growlnotify, which can be found in the Growl DMG under "Extras"
-alias grnot='growlnotify -s -t Terminal -m "Done"'
 
 
 
 
 ### functions
+
+clover() {
+    if [[ $@ == "init" ]]; then
+        command echo "installing/updating your clover installation";
+        # run the installation script and make sure all the config is fresh
+    elif [[ $@ == "update" ]]; then
+        # update the installed clover repositories
+        command ~/Sites/Clover/Server-Assets/Local\ Files/bin/update-all-repositories.sh;
+    elif [[ $@ == "hosts" ]]; then
+        command awk '$1 ~ /Host$/ { print $2 }' ~/.ssh/config;
+    fi
+}
 
 httpd() {
     if [[ $@ == "start" ]]; then
@@ -160,7 +168,9 @@ showhosts() {
 
 export PATH=$PATH:/usr/local/git/bin
 export PATH=$PATH:/usr/local/lib/node_modules
-export PATH=$PATH:/Applications/MAMP/Library/bin
+export PATH=$PATH:/usr/local/sbin
+
+#export PATH=$PATH:/Applications/MAMP/Library/bin
 
 
 
@@ -168,8 +178,8 @@ export PATH=$PATH:/Applications/MAMP/Library/bin
 ### clover aliases
 
 # top level
-alias Clover='cd ~/Sites/Clover'
-alias clover='cd ~/Sites/Clover'
+#alias Clover='cd ~/Sites/Clover'
+#alias clover='cd ~/Sites/Clover'
 alias Sites='cd ~/Sites/Clover/Sites'
 alias sites='cd ~/Sites/Clover/Sites'
 alias Donations='cd ~/Sites/Clover/Donations'
