@@ -47,7 +47,7 @@ clover() {
     	# how to regulate access here?
     	# ssh key would be best
     	# ssh devdonations /var/www/bin/deploy $1 to $2
-    	commadn echo "This will one day deploy code :)";
+    	command echo "This will one day deploy code :)";
         
     elif [[ $@ == "delete" ]]; then
     	
