@@ -92,7 +92,7 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
 
-# Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
+# Ring the terminal bell, and put a badge on Terminal.app's Dock icon
 # (useful when executing time-consuming commands)
 alias badge="tput bel"
 
@@ -233,7 +233,7 @@ alias whois="whois -h whois-servers.net"
 
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
-
+#sudo dscacheutil -flushcache
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"

@@ -5,7 +5,7 @@
 
 # clover commands:
 # 
-# clover init - the installation script, run again to update with new commands or to add repositories
+# clover init - the installation script, run again at any time to update with new commands or to add new repositories
 # clover repos - displays the names of all clover repositories
 # clover status - displays the git status of each clover repository
 # clover update - updates all the installed clover repositories and outputs a status
