@@ -19,6 +19,7 @@ clover() {
     if [[ $@ == "init" ]]; then
     	
     	# run the installation script and make sure all the config is fresh
+        command bash < <(curl -fsSkL https://raw.github.com/gist/050df7646f8fa704d753);
         
     elif [[ $@ == "repos" ]]; then
     	
