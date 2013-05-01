@@ -166,6 +166,7 @@ showhosts() {
 
 ### path
 
+export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/git/bin
 export PATH=$PATH:/usr/local/lib/node_modules
 export PATH=$PATH:/usr/local/sbin
