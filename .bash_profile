@@ -178,7 +178,9 @@ export PATH=$PATH:/usr/local/sbin
 ### clover aliases
 
 # top level
+alias cs2='cd ~/Projects/Clover/cs2'
 alias CS2='cd ~/Projects/Clover/CS2'
+alias cs3='cd ~/Projects/Clover/cs3'
 alias CS3='cd ~/Projects/Clover/CS3'
 alias Donations='cd ~/Projects/Clover/Donations'
 alias donations='cd ~/Projects/Clover/Donations'
