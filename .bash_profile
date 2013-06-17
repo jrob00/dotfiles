@@ -100,18 +100,6 @@ alias badge="tput bel"
 
 ### functions
 
-clover() {
-    if [[ $@ == "init" ]]; then
-        command echo "installing/updating your clover installation";
-        # run the installation script and make sure all the config is fresh
-    elif [[ $@ == "update" ]]; then
-        # update the installed clover repositories
-        command ~/Projects/Clover/Server-Assets/Local\ Files/bin/update-all-repositories.sh;
-    elif [[ $@ == "hosts" ]]; then
-        command awk '$1 ~ /Host$/ { print $2 }' ~/.ssh/config;
-    fi
-}
-
 httpd() {
     if [[ $@ == "start" ]]; then
             command sudo /Applications/MAMP/Library/bin/apachectl start;
@@ -178,9 +166,9 @@ export PATH=$PATH:/usr/local/sbin
 ### clover aliases
 
 # top level
-alias cs2='cd ~/Projects/Clover/cs2'
+alias cs2='cd ~/Projects/Clover/CS2'
 alias CS2='cd ~/Projects/Clover/CS2'
-alias cs3='cd ~/Projects/Clover/cs3'
+alias cs3='cd ~/Projects/Clover/CS3'
 alias CS3='cd ~/Projects/Clover/CS3'
 alias Donations='cd ~/Projects/Clover/Donations'
 alias donations='cd ~/Projects/Clover/Donations'
