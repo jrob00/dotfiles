@@ -217,8 +217,8 @@ alias Shared-Photosynthesis-Billing='cd ~/Projects/Clover/CS2/Shared-Photosynthe
 # CS3
 alias api='cd ~/Projects/Clover/CS3/API'
 alias API='cd ~/Projects/Clover/CS3/API'
-alias site='cd ~/Projects/Clover/CS3/Site'
-alias Site='cd ~/Projects/Clover/CS3/Site'
+alias sites='cd ~/Projects/Clover/CS3/Sites'
+alias Sites='cd ~/Projects/Clover/CS3/Sites'
 alias greenhouse='cd ~/Projects/Clover/CS3/Greenhouse'
 alias Greenhouse='cd ~/Projects/Clover/CS3/Greenhouse'
 alias admin='cd ~/Projects/Clover/CS3/Admin'
