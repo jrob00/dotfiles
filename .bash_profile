@@ -2,9 +2,9 @@
 
 alias reload='source ~/.bash_profile'
 alias installclover='bash < <(curl -fsSkL https://raw.github.com/gist/050df7646f8fa704d753)'
-alias updaterepos='~/Sites/Clover/Server-Assets/Local\ Files/bin/update-all-repositories.sh'
-alias updateshell='(cd ~/Sites/Personal/dotfiles/ && git pull && sudo cp -f .bash_profile ~/); reload'
-alias updatessh='(cd ~/Sites/Personal/dotfiles/ && git pull && cp -f .ssh/config ~/.ssh/); (cd ~/Sites/Clover/Server-Assets/ && git pull && cat Local\ Files/ssh.config >> ~/.ssh/config)'
+alias updaterepos='~/Projects/Clover/Server-Assets/Local\ Files/bin/update-all-repositories.sh'
+alias updateshell='(cd ~/Projects/Personal/dotfiles/ && git pull && sudo cp -f .bash_profile ~/); reload'
+alias updatessh='(cd ~/Projects/Personal/dotfiles/ && git pull && cp -f .ssh/config ~/.ssh/); (cd ~/Projects/Clover/Server-Assets/ && git pull && cat Local\ Files/ssh.config >> ~/.ssh/config)'
 
 
 
@@ -23,7 +23,7 @@ alias www='cd /var/www'
 alias log='cd /var/www/log'
 alias html='cd /var/www/html'
 alias apache='cd /etc/httpd/conf.d'
-alias dotfiles='cd ~/Sites/Personal/dotfiles'
+alias dotfiles='cd ~/Projects/Personal/dotfiles'
 
 alias dropbox="cd ~/Dropbox"
 alias projects="cd ~/Projects"
@@ -106,7 +106,7 @@ clover() {
         # run the installation script and make sure all the config is fresh
     elif [[ $@ == "update" ]]; then
         # update the installed clover repositories
-        command ~/Sites/Clover/Server-Assets/Local\ Files/bin/update-all-repositories.sh;
+        command ~/Projects/Clover/Server-Assets/Local\ Files/bin/update-all-repositories.sh;
     elif [[ $@ == "hosts" ]]; then
         command awk '$1 ~ /Host$/ { print $2 }' ~/.ssh/config;
     fi
@@ -141,7 +141,7 @@ pmdown () {
     # example '$ pmdown README.md'
     if command -v markdown &>/dev/null
     then
-      markdown $1 | canary
+      markdown $1 | chrome
     else
       echo "You don't have a markdown command installed!"
     fi
@@ -178,37 +178,43 @@ export PATH=$PATH:/usr/local/sbin
 ### clover aliases
 
 # top level
-#alias Clover='cd ~/Sites/Clover'
-#alias clover='cd ~/Sites/Clover'
-alias Sites='cd ~/Sites/Clover/Sites'
-alias sites='cd ~/Sites/Clover/Sites'
-alias Donations='cd ~/Sites/Clover/Donations'
-alias donations='cd ~/Sites/Clover/Donations'
+alias CS2='cd ~/Projects/Clover/CS2'
+alias CS3='cd ~/Projects/Clover/CS3'
+alias Donations='cd ~/Projects/Clover/Donations'
+alias donations='cd ~/Projects/Clover/Donations'
 
 # main
-alias Server-Assets='cd ~/Sites/Clover/Server-Assets'
-alias hubot='cd ~/Sites/Clover/hubot'
-alias CloverAchiever.com='cd ~/Sites/Clover/CloverAchiever.com'
-alias SpeakingOfClover.com='cd ~/Sites/Clover/SpeakingOfClover.com'
+alias Server-Assets='cd ~/Projects/Clover/Server-Assets'
+alias hubot='cd ~/Projects/Clover/hubot'
+alias Hubot='cd ~/Projects/Clover/hubot'
+alias CloverAchiever.com='cd ~/Projects/Clover/CloverAchiever.com'
+alias SpeakingOfClover.com='cd ~/Projects/Clover/SpeakingOfClover.com'
 
 # donations
-alias Donation-Emailer='cd ~/Sites/Clover/Donations/Donation-Emailer'
-alias Donation-Center='cd ~/Sites/Clover/Donations/Donation-Center'
-alias CloverDonations.com='cd ~/Sites/Clover/Donations/CloverDonations.com'
-alias Donation-Assets='cd ~/Sites/Clover/Donations/Donation-Assets'
-alias Donation-Cron='cd ~/Sites/Clover/Donations/Donation-Cron'
-alias The-Bakery='cd ~/Sites/Clover/Donations/The-Bakery'
+alias Donation-Emailer='cd ~/Projects/Clover/Donations/Donation-Emailer'
+alias Donation-Center='cd ~/Projects/Clover/Donations/Donation-Center'
+alias CloverDonations.com='cd ~/Projects/Clover/Donations/CloverDonations.com'
+alias Donation-Assets='cd ~/Projects/Clover/Donations/Donation-Assets'
+alias Donation-Cron='cd ~/Projects/Clover/Donations/Donation-Cron'
+alias The-Bakery='cd ~/Projects/Clover/Donations/The-Bakery'
 
-# sites
-alias Site-Assets='cd ~/Sites/Clover/Sites/Site-Assets'
-alias Site-Flash='cd ~/Sites/Clover/Sites/Site-Flash'
-alias Site-Billing='cd ~/Sites/Clover/Sites/Site-Billing'
-alias CloverSites.com='cd ~/Sites/Clover/Sites/CloverSites.com'
-alias Photosynthesis='cd ~/Sites/Clover/Sites/Photosynthesis'
-alias Shared-Photosynthesis-Billing='cd ~/Sites/Clover/Sites/Shared-Photosynthesis-Billing'
-#alias Site-Cornerstone='cd ~/Sites/Clover/Sites/Site-Cornerstone'
-#alias splash.clo.do='cd ~/Sites/Clover/Sites/splash.clo.do'
+# CS2
+alias Site-Assets='cd ~/Projects/Clover/CS2/Site-Assets'
+alias Site-Flash='cd ~/Projects/Clover/CS2/Site-Flash'
+alias Site-Billing='cd ~/Projects/Clover/CS2/Site-Billing'
+alias CloverProjects.com='cd ~/Projects/Clover/CS2/CloverProjects.com'
+alias Photosynthesis='cd ~/Projects/Clover/CS2/Photosynthesis'
+alias Shared-Photosynthesis-Billing='cd ~/Projects/Clover/CS2/Shared-Photosynthesis-Billing'
+#alias Site-Cornerstone='cd ~/Projects/Clover/CS2/Site-Cornerstone'
+#alias splash.clo.do='cd ~/Projects/Clover/CS2/splash.clo.do'
 
+# CS3
+alias api='cd ~/Projects/Clover/CS3/API'
+alias API='cd ~/Projects/Clover/CS3/API'
+alias Site='cd ~/Projects/Clover/CS3/Site'
+alias Greenhouse='cd ~/Projects/Clover/CS3/Greenhouse'
+alias Admin='cd ~/Projects/Clover/CS3/Admin'
+alias Login='cd ~/Projects/Clover/CS3/Login'
 
 
 

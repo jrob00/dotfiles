@@ -37,7 +37,7 @@ clover() {
     elif [[ $@ == "update" ]]; then
     	
     	# update the installed clover repositories
-        command ~/Sites/Clover/Server-Assets/Local\ Files/bin/update-all-repositories.sh;
+        command ~/Projects/Clover/Server-Assets/Local\ Files/bin/update-all-repositories.sh;
         
     elif [[ $@ == "hosts" ]]; then
     	
