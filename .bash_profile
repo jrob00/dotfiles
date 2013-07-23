@@ -43,6 +43,7 @@ alias safari="open -a safari"
 alias firefox="open -a firefox"
 alias chrome="open -a google\ chrome"
 alias canary="open -a google\ chrome\ canary"
+alias tower="open -a '/Applications/Tower.app'"
 
 export EDITOR='subl'
 
