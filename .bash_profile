@@ -45,7 +45,7 @@ alias chrome="open -a google\ chrome"
 alias canary="open -a google\ chrome\ canary"
 alias tower="open -a '/Applications/Tower.app'"
 
-export EDITOR='subl'
+export EDITOR='subl -w'
 
 if [ -s /usr/bin/firefox ] ; then
   unalias firefox
@@ -125,7 +125,7 @@ down4me() {
     curl -s "http://www.downforeveryoneorjustme.com/$1" | sed '/just you/!d;s/<[^>]*>//g'
 }
 
-pmdown () {
+pmdown() {
     # preview markdown file in a browser
     # example '$ pmdown README.md'
     if command -v markdown &>/dev/null
@@ -142,6 +142,43 @@ showhosts() {
 }
 
 
+# sublime text alias
+function project_aware_subl() {
+    #$(ls *.sublime-project ~/Dropbox/Local\ Dev/Sublime\ Projects/${current_directory}.sublime-project)
+    
+    #project_file=$(ls *.sublime-project ~/Dropbox/Local\ Dev/Sublime\ Projects/${current_directory}.sublime-project 2>/dev/null | head -n 1)
+    #subl ${*:-${project_file:-.}}
+    
+    current_directory=${PWD##*/}
+    #echo ${current_directory}
+
+    result=$(ls *.sublime-project 2>/dev/null | head -n 1)
+    #echo "result1:"${result}
+
+    if [ -z $result ]; then
+        result=$(ls ~/Documents/Sublime/${current_directory}.sublime-project 2>/dev/null | head -n 1)
+        result=$(printf '%q' "$result")
+        #echo "result2:"${result}
+        
+        if [[ $result == "''" ]]; then
+            echo "project doesn't exist.."
+            unset result
+        else
+            echo "opening project.."
+        fi
+    else
+        echo "opening project.."
+    fi
+    
+    #project_file=$(ls *.sublime-project ~/Dropbox/Local\ Dev/Sublime\ Projects/${current_directory}.sublime-project 2>/dev/null | head -n 1)
+    
+    #to_run=${*:-${result:-.}}
+    #echo "to_run:"${to_run}
+    
+    subl ${*:-${result:-.}}
+    
+}
+alias subl="project_aware_subl"
 
 
 ### rvm
