@@ -28,10 +28,10 @@ sudo cp -f ../.gitconfig ~/
 sudo cp -f ../.gitignore ~/
 sudo cp -f ../.gitattributes ~/
 
-exit
 
 sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/bin/subl
 
+exit
 
 
 # step two

@@ -272,6 +272,9 @@ alias g="git"
 
 
 
+### rails aliases
+#alias rake_reset="rake db:reset;rake db:drop db:create db:migrate db:seed;"
+
 
 ### network aliases
 
