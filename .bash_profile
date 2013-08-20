@@ -28,13 +28,24 @@ alias dotfiles='cd ~/Projects/Personal/dotfiles'
 alias dropbox="cd ~/Dropbox"
 alias projects="cd ~/Projects"
 
-
+alias mini="open vnc://DesignAndDevelopment@192.168.1.91"
 
 
 # Application shortcuts
 
 alias f='open -a Finder '
 alias fh='open -a Finder .'
+
+# cd to the path of the front Finder window
+cdf() {
+    target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+    if [ "$target" != "" ]; then
+        cd "$target"; pwd
+    else
+        echo 'No Finder window found' >&2
+    fi
+}
+
 alias photoshop="open -a '/Applications/Adobe Photoshop CS5.1/Adobe Photoshop CS5.1.app'"
 alias preview="open -a '/Applications/Preview.app'"
 alias xcode="open -a '/Developer/Applications/Xcode.app'"
