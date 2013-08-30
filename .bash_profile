@@ -32,6 +32,7 @@ alias mini="open vnc://DesignAndDevelopment@192.168.1.91"
 alias next='ssh mini "/usr/bin/osascript -e \"tell app \\\"Rdio\\\" to next track\""'
 alias play='ssh mini "/usr/bin/osascript /Users/DesignAndDevelopment/Effects/pausemusic.scpt"'
 alias pause='ssh mini "/usr/bin/osascript /Users/DesignAndDevelopment/Effects/pausemusic.scpt"'
+#alias rickroll='ssh mini "/usr/bin/osascript -e \"tell app \\\"Rdio\\\" to play source \\\"t2910908\\\"\""'
 
 # Application shortcuts
 
