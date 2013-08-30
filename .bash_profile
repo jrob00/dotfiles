@@ -29,7 +29,9 @@ alias dropbox="cd ~/Dropbox"
 alias projects="cd ~/Projects"
 
 alias mini="open vnc://DesignAndDevelopment@192.168.1.91"
-
+alias next='ssh mini "/usr/bin/osascript -e \"tell app \\\"Rdio\\\" to next track\""'
+alias play='ssh mini "/usr/bin/osascript /Users/DesignAndDevelopment/Effects/pausemusic.scpt"'
+alias pause='ssh mini "/usr/bin/osascript /Users/DesignAndDevelopment/Effects/pausemusic.scpt"'
 
 # Application shortcuts
 
@@ -46,13 +48,13 @@ cdf() {
     fi
 }
 
-alias photoshop="open -a '/Applications/Adobe Photoshop CS5.1/Adobe Photoshop CS5.1.app'"
+alias photoshop="open -a '/Applications/Adobe Photoshop CS6/Adobe Photoshop CS6.app'"
 alias preview="open -a '/Applications/Preview.app'"
 alias xcode="open -a '/Developer/Applications/Xcode.app'"
 alias filemerge="open -a '/Developer/Applications/Utilities/FileMerge.app'"
 alias safari="open -a safari"
 alias firefox="open -a firefox"
-alias chrome="open -a google\ chrome"
+alias chrome="open -a google\ chrome\ beta"
 alias canary="open -a google\ chrome\ canary"
 alias tower="open -a '/Applications/Tower.app'"
 
@@ -194,6 +196,7 @@ alias subl="project_aware_subl"
 
 ### rvm
 
+export PATH=$PATH:$HOME/.rvm/bin
 # This loads RVM into a shell session.
 [[ -s "/Users/jason/.rvm/scripts/rvm" ]] && source "/Users/jason/.rvm/scripts/rvm"
 
