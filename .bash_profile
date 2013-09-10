@@ -33,6 +33,7 @@ alias next='ssh mini "/usr/bin/osascript -e \"tell app \\\"Rdio\\\" to next trac
 alias play='ssh mini "/usr/bin/osascript /Users/DesignAndDevelopment/Effects/pausemusic.scpt"'
 alias pause='ssh mini "/usr/bin/osascript /Users/DesignAndDevelopment/Effects/pausemusic.scpt"'
 #alias rickroll='ssh mini "/usr/bin/osascript -e \"tell app \\\"Rdio\\\" to play source \\\"t2910908\\\"\""'
+alias tint='url --connect-timeout 10 --max-time 10 http://tint.cloversites.com/api/create_random_gradient >/dev/null 2>&1'
 
 # Application shortcuts
 
