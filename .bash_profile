@@ -126,13 +126,22 @@ httpd() {
     fi
 }
 
+#mysqld() {
+#    if [[ $@ == "start" ]]; then
+#            command sudo /Applications/MAMP/Library/bin/mysqld_safe --port=3306 --socket=/Applications/MAMP/tmp/mysql/mysql.sock --lower_case_table_names=0 --pid-file=/Applications/MAMP/tmp/mysql/mysql.pid --log-error=/Applications/MAMP/logs/mysql_error_log;
+#    elif [[ $@ == "stop" ]]; then
+#            command sudo /Applications/MAMP/Library/bin/mysqladmin -u root -proot --socket=/Applications/MAMP/tmp/mysql/mysql.sock shutdown;
+#    fi
+#}
+
 mysqld() {
     if [[ $@ == "start" ]]; then
-            command sudo /Applications/MAMP/Library/bin/mysqld_safe --port=3306 --socket=/Applications/MAMP/tmp/mysql/mysql.sock --lower_case_table_names=0 --pid-file=/Applications/MAMP/tmp/mysql/mysql.pid --log-error=/Applications/MAMP/logs/mysql_error_log;
+            command mysql.server start;
     elif [[ $@ == "stop" ]]; then
-            command sudo /Applications/MAMP/Library/bin/mysqladmin -u root -proot --socket=/Applications/MAMP/tmp/mysql/mysql.sock shutdown;
+            command mysql.server stop;
     fi
 }
+
 
 down4me() {
     # checks whether a website is down for you, or everybody
