@@ -116,13 +116,14 @@ alias badge="tput bel"
 
 ### functions
 
-httpd() {
+# via mamp
+http() {
     if [[ $@ == "start" ]]; then
-            command sudo /Applications/MAMP/Library/bin/apachectl start;
+        command sudo /Applications/MAMP/Library/bin/apachectl start;
     elif [[ $@ == "restart" ]]; then
-            command sudo /Applications/MAMP/Library/bin/apachectl restart;
+        command sudo /Applications/MAMP/Library/bin/apachectl restart;
     elif [[ $@ == "stop" ]]; then
-            command sudo /Applications/MAMP/Library/bin/apachectl stop;
+        command sudo /Applications/MAMP/Library/bin/apachectl stop;
     fi
 }
 
@@ -134,11 +135,16 @@ httpd() {
 #    fi
 #}
 
-mysqld() {
+# via brew
+mysql() {
     if [[ $@ == "start" ]]; then
-            command mysql.server start;
+        command mysql.server start;
     elif [[ $@ == "stop" ]]; then
-            command mysql.server stop;
+        command mysql.server stop;
+    elif [[ $@ == "load" ]]; then
+        command launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist    
+    elif [[ $@ == "unload" ]]; then
+        command launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
     fi
 }
 
