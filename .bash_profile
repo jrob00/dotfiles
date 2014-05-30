@@ -294,6 +294,8 @@ alias admin='cd ~/Projects/Clover/CS3/Admin'
 alias Admin='cd ~/Projects/Clover/CS3/Admin'
 alias login='cd ~/Projects/Clover/CS3/Login'
 alias Login='cd ~/Projects/Clover/CS3/Login'
+alias accounts='cd ~/Projects/Clover/CS3/Accounts'
+alias Accounts='cd ~/Projects/Clover/CS3/Accounts'
 
 
 
