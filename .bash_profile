@@ -251,6 +251,7 @@ alias cloverachiever.com='cd ~/Projects/Clover/CloverAchiever.com'
 alias CloverAchiever.com='cd ~/Projects/Clover/CloverAchiever.com'
 alias speakingofclover.com='cd ~/Projects/Clover/SpeakingOfClover.com'
 alias SpeakingOfClover.com='cd ~/Projects/Clover/SpeakingOfClover.com'
+alias spock='cd ~/Projects/Clover/SpeakingOfClover.com/Deploy/wp-content/themes/spock'
 
 # donations
 alias donation-emailer='cd ~/Projects/Clover/Donations/Donation-Emailer'
