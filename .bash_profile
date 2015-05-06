@@ -213,16 +213,19 @@ alias subl="project_aware_subl"
 
 ### rvm
 
-export PATH=$PATH:$HOME/.rvm/bin
+#export PATH=$PATH:$HOME/.rvm/bin
 # This loads RVM into a shell session.
-[[ -s "/Users/jason/.rvm/scripts/rvm" ]] && source "/Users/jason/.rvm/scripts/rvm"
+#[[ -s "/Users/jason/.rvm/scripts/rvm" ]] && source "/Users/jason/.rvm/scripts/rvm"
 
 
+### rbenv
+export PATH=~/.rbenv/shims:$PATH
+eval "$(rbenv init -)"
 
 
 ### path
 
-export PATH=/usr/local/bin:$PATH
+#export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/git/bin
 export PATH=$PATH:/usr/local/lib/node_modules
 export PATH=$PATH:/usr/local/sbin
@@ -274,8 +277,8 @@ alias site-flash='cd ~/Projects/Clover/CS2/Site-Flash'
 alias Site-Flash='cd ~/Projects/Clover/CS2/Site-Flash'
 alias site-billing='cd ~/Projects/Clover/CS2/Site-Billing'
 alias Site-Billing='cd ~/Projects/Clover/CS2/Site-Billing'
-alias cloverprojects.com='cd ~/Projects/Clover/CS2/CloverProjects.com'
-alias CloverProjects.com='cd ~/Projects/Clover/CS2/CloverProjects.com'
+alias cloversites.com-classic='cd ~/Projects/Clover/CS2/CloverSites.com-classic'
+alias CloverSites.com-classic='cd ~/Projects/Clover/CS2/CloverSites.com-classic'
 alias photosynthesis='cd ~/Projects/Clover/CS2/Photosynthesis'
 alias Photosynthesis='cd ~/Projects/Clover/CS2/Photosynthesis'
 alias shared-photosynthesis-billing='cd ~/Projects/Clover/CS2/Shared-Photosynthesis-Billing'
@@ -295,6 +298,10 @@ alias admin='cd ~/Projects/Clover/CS3/Admin'
 alias Admin='cd ~/Projects/Clover/CS3/Admin'
 alias accounts='cd ~/Projects/Clover/CS3/Accounts'
 alias Accounts='cd ~/Projects/Clover/CS3/Accounts'
+alias team='cd ~/Projects/Clover/CS3/Team'
+alias Team='cd ~/Projects/Clover/CS3/Team'
+alias cloversites.com='cd ~/Projects/Clover/CS3/CloverSites.com'
+alias CloverSites.com='cd ~/Projects/Clover/CS3/CloverSites.com'
 
 
 
