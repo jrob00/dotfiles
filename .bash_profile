@@ -58,7 +58,7 @@ alias safari="open -a safari"
 alias firefox="open -a firefox"
 alias chrome="open -a google\ chrome\ beta"
 alias canary="open -a google\ chrome\ canary"
-alias tower="open -a '/Applications/Tower.app'"
+alias tower="open -a /Applications/Tower.app"
 
 export EDITOR='subl -w'
 
@@ -205,7 +205,9 @@ function project_aware_subl() {
     #to_run=${*:-${result:-.}}
     #echo "to_run:"${to_run}
     
-    subl ${*:-${result:-.}}
+    # subl ${*:-${result:-.}}
+    open -a /Applications/Sublime\ Text\ 2.app/ ${*:-${result:-.}}
+    # open -a /Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ Text\ 2 ${*:-${result:-.}}
     
 }
 alias subl="project_aware_subl"
@@ -230,7 +232,8 @@ export PATH=$PATH:/usr/local/git/bin
 export PATH=$PATH:/usr/local/lib/node_modules
 export PATH=$PATH:/usr/local/sbin
 
-#export PATH=$PATH:/Applications/MAMP/Library/bin
+#export PATH=$PATH:/Applications/MAMP/Library/bin/
+export PATH=/Applications/MAMP/bin/php/php5.2.17/bin:$PATH
 
 
 
@@ -302,6 +305,12 @@ alias team='cd ~/Projects/Clover/CS3/Team'
 alias Team='cd ~/Projects/Clover/CS3/Team'
 alias cloversites.com='cd ~/Projects/Clover/CS3/CloverSites.com'
 alias CloverSites.com='cd ~/Projects/Clover/CS3/CloverSites.com'
+alias dashboard='cd ~/Projects/Clover/CS3/Dashboard'
+alias Dashboard='cd ~/Projects/Clover/CS3/Dashboard'
+
+
+# C66
+
 
 
 
@@ -357,4 +366,11 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
+
+
+
+### boot2docker
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/jason/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
 

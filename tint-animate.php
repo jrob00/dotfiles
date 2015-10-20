@@ -1,0 +1,83 @@
+<?php
+
+
+/*
+
+# create
+- /c/?8046df,8046df,etc
+# flash
+- /f/?ff9900
+# get?
+- /g/
+
+
+curl --connect-timeout 10 --max-time 10 http://cloversites.dyndns.org:10000/f/?27aa16
+
+# Tell the Tint RGB Wall to have a different gradient every hour (from 7am - 8pm on weekdays)
+
+0 7,8,9,10,11,12,13,14,15,16,17,18,19,20  * * 1,2,3,4,5 curl --connect-timeout 10 --max-time 10 http://tint.cloversites.com/api/create_random_gradient >/dev/null 2>&1
+
+curl --connect-timeout 10 --max-time 10 http://cloversites.dyndns.org:10000/c/?def70d,def70d,def70d,def70d,def70d,def70d,def70d,def70d,def70d,def70d,def70d,defef70d,def70d,def70d,def70d,def70d,def70d,def70d*,dcf70e,daf60f,d9f610,d7f611,d6f611,d4f612,d2f613,d1f614,cff615,cef616,ccf617,caf618,c9f519,c7f51a,c5f51b,c4f51c,c2f51c,c1f51d,bff51e,bdf51f,bcf520,baf521,b9f422,b7f423,b5f424,b4f425,b2f426,b0f427,aff428,adf428,acf429,aaf42a,a8f42b,a7f32c,a5f32d,a4f32e,a2f32f,a0f330,9ff331,9df332,9cf333,9af333,98f334,97f235,95f236,93f237,92f238,90f239,8ff23a,8df23b,8bf23c,8af23d,88f23e,87f23e,85f13f,83f140,82f141,80f142,7ef143,7df144,7bf145,7af146,78f147,76f148,75f049,73f04a,72f04a,70f04b,6ef04c,6df04d,6bf04e,69f04f,68f050,66f051,65f052,63ef53,61ef54,60ef55,5eef55,5def56,5bef57,59ef58,58ef59,56ef5a,55ef5b,53ee5c,51ee5d,50ee5e,4eee5f,4cee60,4bee60,49ee61,48ee62,46ee63,44ee64,43ee65,41ed66,40ed67,3eed68,3ced69,3bed6a,39ed6b,37ed6c,36ed6c,34ed6d,33ed6e,31ec6f,2fec70,2eec71,2cec72,2bec73,29ec74,27ec75,26ec76,24ec77,23ec77,21ec78,1feb79,1eeb7a*,1eeb7a,1eeb7a,1eeb7a,1eeb7a,1eeb7a,1eeb7a,1eeb7a,1eeb7a,1eeb7a,1eeb7a,1eeb7a,1eeb7a,1eeb7a,1eeb7a,1eeb7a,1eeb7a,1eeb7a,1eeb7a,1eeb7a,1eeb7a
+
+
+curl --connect-timeout 10 --max-time 10 http://cloversites.dyndns.org:10000/c/?000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,ffffff,ffffff,ffffff,ffffff,ffffff,ffffff,ffffff,ffffff,ffffff,ffffff,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000
+
+
+curl http://cloversites.dyndns.org:10000/c/?000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,ffffff*/
+
+
+// variables
+$color_array = array();
+$number_of_colors = 160;
+$color_highlight = "ffffff";
+$number_of_highlighted_colors = 10;
+
+// build an all black color array
+for ($i=0; $i<$number_of_colors; $i++) {
+  $color_array[$i] = "000000";
+}
+
+print implode(",", $color_array);
+print "\n";
+
+
+// loop the color array and move the highlight advancing one by one
+for ($i=0; $i<$number_of_colors; $i++) {
+
+// or, loop the color array and move the highlight advancing by x
+//for ($i=0; $i<($number_of_colors+$number_of_highlighted_colors); $i+=$number_of_highlighted_colors) {
+  
+  // color our previous color black again
+  if ($i >= 1) $color_array[($i-1)] = "000000";
+  
+  // for ($k=0; $k<=$number_of_highlighted_colors; $k++) {
+  //   $color_array[$i-$k] = "000000";
+  // }
+  
+  
+  // for this position in the color array, color the next x our highlight color
+  for ($j=$i; $j<($i+$number_of_highlighted_colors); $j++) {
+    if ($j < $number_of_colors)
+      $color_array[$j] = $color_highlight;
+  }
+  
+  
+  // request tint
+  $url = "http://cloversites.dyndns.org:10000/c/?" . implode(",", $color_array);  
+  
+  $ch = curl_init($url); 
+  $response = curl_exec($ch); //execute post and get results
+  
+  print "url: $url\n";
+  //print "response: $response";
+  //print "\n";
+
+  curl_close($ch);
+  
+  // > /dev/null &
+  
+  //`curl --connect-timeout 10 --max-time 10 $url > /dev/null &`;  
+  
+}
+
+?>
