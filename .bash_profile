@@ -76,7 +76,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 # tail the newest file in a directory
-alias tailnew='tail "`ls -t | head -1`"'
+alias tailnew='tail -f "`ls -t | head -1`"'
 
 
 
