@@ -138,13 +138,13 @@ http() {
 #}
 
 # via brew
-mysql() {
+my() {
     if [[ $@ == "start" ]]; then
         command mysql.server start;
     elif [[ $@ == "stop" ]]; then
         command mysql.server stop;
     elif [[ $@ == "load" ]]; then
-        command launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist    
+        command launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
     elif [[ $@ == "unload" ]]; then
         command launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
     fi
@@ -372,7 +372,4 @@ fi
 
 
 ### boot2docker
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/jason/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
-
+eval $(docker-machine env default)
