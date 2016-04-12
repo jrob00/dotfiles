@@ -1,12 +1,14 @@
 # Dotfile deployment
 
 alias reload='source ~/.bash_profile'
-alias installclover='bash < <(curl -fsSkL https://raw.github.com/gist/050df7646f8fa704d753)'
-alias updaterepos='~/Projects/Clover/Server-Assets/Local\ Files/bin/update-all-repositories.sh'
-alias updateshell='(cd ~/Projects/Personal/dotfiles/ && git pull && sudo cp -f .bash_profile ~/); reload'
-alias updatessh='(cd ~/Projects/Personal/dotfiles/ && git pull && cp -f .ssh/config ~/.ssh/); (cd ~/Projects/Clover/Server-Assets/ && git pull && cat Local\ Files/ssh.config >> ~/.ssh/config)'
+#alias installclover='bash < <(curl -fsSkL https://raw.github.com/gist/050df7646f8fa704d753)'
+#alias updaterepos='~/Projects/Clover/Server-Assets/Local\ Files/bin/update-all-repositories.sh'
+alias updateshell='(cd ~/Projects/dotfiles/ && git pull && sudo cp -f .bash_profile ~/); reload'
+#alias updatessh='(cd ~/Projects/dotfiles/ && git pull && cp -f .ssh/config ~/.ssh/); (cd ~/Projects/Clover/Server-Assets/ && git pull && cat Local\ Files/ssh.config >> ~/.ssh/config)'
+alias updatessh='(cd ~/Projects/dotfiles/ && git pull && cp -f .ssh/config ~/.ssh/)'
 
 
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
 
 # Easier navigation: .., ..., ...., ....., and -
@@ -23,17 +25,19 @@ alias www='cd /var/www'
 alias log='cd /var/www/log'
 alias html='cd /var/www/html'
 alias apache='cd /etc/httpd/conf.d'
-alias dotfiles='cd ~/Projects/Personal/dotfiles'
+alias dotfiles='cd ~/Projects/dotfiles'
 
-alias dropbox="cd ~/Dropbox"
+#alias dropbox="cd ~/Dropbox"
 alias projects="cd ~/Projects"
 
-alias mini="open vnc://DesignAndDevelopment@192.168.1.91"
-alias next='ssh mini "/usr/bin/osascript -e \"tell app \\\"Rdio\\\" to next track\""'
-alias play='ssh mini "/usr/bin/osascript /Users/DesignAndDevelopment/Effects/pausemusic.scpt"'
-alias pause='ssh mini "/usr/bin/osascript /Users/DesignAndDevelopment/Effects/pausemusic.scpt"'
+alias pm="cd ~/Projects/PennyMac"
+
+#alias mini="open vnc://DesignAndDevelopment@192.168.1.91"
+#alias next='ssh mini "/usr/bin/osascript -e \"tell app \\\"Rdio\\\" to next track\""'
+#alias play='ssh mini "/usr/bin/osascript /Users/DesignAndDevelopment/Effects/pausemusic.scpt"'
+#alias pause='ssh mini "/usr/bin/osascript /Users/DesignAndDevelopment/Effects/pausemusic.scpt"'
 #alias rickroll='ssh mini "/usr/bin/osascript -e \"tell app \\\"Rdio\\\" to play source \\\"t2910908\\\"\""'
-alias tint='curl --connect-timeout 10 --max-time 10 http://tint.cloversites.com/api/create_random_gradient >/dev/null 2>&1'
+#alias tint='curl --connect-timeout 10 --max-time 10 http://tint.cloversites.com/api/create_random_gradient >/dev/null 2>&1'
 
 # Application shortcuts
 
@@ -50,21 +54,22 @@ cdf() {
     fi
 }
 
-alias photoshop="open -a '/Applications/Adobe Photoshop CS6/Adobe Photoshop CS6.app'"
+#alias photoshop="open -a '/Applications/Adobe Photoshop CS6/Adobe Photoshop CS6.app'"
 alias preview="open -a '/Applications/Preview.app'"
 alias xcode="open -a '/Developer/Applications/Xcode.app'"
 alias filemerge="open -a '/Developer/Applications/Utilities/FileMerge.app'"
 alias safari="open -a safari"
 alias firefox="open -a firefox"
 alias chrome="open -a google\ chrome\ beta"
-alias canary="open -a google\ chrome\ canary"
+#alias canary="open -a google\ chrome\ canary"
 alias tower="open -a /Applications/Tower.app"
+alias subl="open -a /Applications/Sublime Text.app"
 
 export EDITOR='subl -w'
 
-if [ -s /usr/bin/firefox ] ; then
-  unalias firefox
-fi
+#if [ -s /usr/bin/firefox ] ; then
+#  unalias firefox
+#fi
 
 
 
@@ -81,7 +86,6 @@ alias tailnew='tail -f "`ls -t | head -1`"'
 
 
 # Detect which `ls` flavor is in use
-
 if ls --color > /dev/null 2>&1; then # GNU `ls`
 	colorflag="--color"
 else # OS X `ls`
@@ -119,15 +123,15 @@ alias badge="tput bel"
 ### functions
 
 # via mamp
-http() {
-    if [[ $@ == "start" ]]; then
-        command sudo /Applications/MAMP/Library/bin/apachectl start;
-    elif [[ $@ == "restart" ]]; then
-        command sudo /Applications/MAMP/Library/bin/apachectl restart;
-    elif [[ $@ == "stop" ]]; then
-        command sudo /Applications/MAMP/Library/bin/apachectl stop;
-    fi
-}
+#http() {
+#    if [[ $@ == "start" ]]; then
+#        command sudo /Applications/MAMP/Library/bin/apachectl start;
+#    elif [[ $@ == "restart" ]]; then
+#        command sudo /Applications/MAMP/Library/bin/apachectl restart;
+#    elif [[ $@ == "stop" ]]; then
+#        command sudo /Applications/MAMP/Library/bin/apachectl stop;
+#    fi
+#}
 
 #mysqld() {
 #    if [[ $@ == "start" ]]; then
@@ -138,17 +142,17 @@ http() {
 #}
 
 # via brew
-my() {
-    if [[ $@ == "start" ]]; then
-        command mysql.server start;
-    elif [[ $@ == "stop" ]]; then
-        command mysql.server stop;
-    elif [[ $@ == "load" ]]; then
-        command launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
-    elif [[ $@ == "unload" ]]; then
-        command launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
-    fi
-}
+#my() {
+#    if [[ $@ == "start" ]]; then
+#        command mysql.server start;
+#    elif [[ $@ == "stop" ]]; then
+#        command mysql.server stop;
+#    elif [[ $@ == "load" ]]; then
+#        command launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+#    elif [[ $@ == "unload" ]]; then
+#        command launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+#    fi
+#}
 
 
 down4me() {
@@ -157,161 +161,37 @@ down4me() {
     curl -s "http://www.downforeveryoneorjustme.com/$1" | sed '/just you/!d;s/<[^>]*>//g'
 }
 
-pmdown() {
-    # preview markdown file in a browser
-    # example '$ pmdown README.md'
-    if command -v markdown &>/dev/null
-    then
-      markdown $1 | chrome
-    else
-      echo "You don't have a markdown command installed!"
-    fi
-}
-
 # List hosts defined in ssh config
 showhosts() {
     awk '$1 ~ /Host$/ { print $2 }' ~/.ssh/config
 }
 
 
-# sublime text alias
-function project_aware_subl() {
-    #$(ls *.sublime-project ~/Dropbox/Local\ Dev/Sublime\ Projects/${current_directory}.sublime-project)
-    
-    #project_file=$(ls *.sublime-project ~/Dropbox/Local\ Dev/Sublime\ Projects/${current_directory}.sublime-project 2>/dev/null | head -n 1)
-    #subl ${*:-${project_file:-.}}
-    
-    current_directory=${PWD##*/}
-    #echo ${current_directory}
-
-    result=$(ls *.sublime-project 2>/dev/null | head -n 1)
-    #echo "result1:"${result}
-
-    if [ -z $result ]; then
-        result=$(ls ~/Documents/Sublime/${current_directory}.sublime-project 2>/dev/null | head -n 1)
-        result=$(printf '%q' "$result")
-        #echo "result2:"${result}
-        
-        if [[ $result == "''" ]]; then
-            echo "project doesn't exist.."
-            unset result
-        else
-            echo "opening project.."
-        fi
-    else
-        echo "opening project.."
-    fi
-    
-    #project_file=$(ls *.sublime-project ~/Dropbox/Local\ Dev/Sublime\ Projects/${current_directory}.sublime-project 2>/dev/null | head -n 1)
-    
-    #to_run=${*:-${result:-.}}
-    #echo "to_run:"${to_run}
-    
-    # subl ${*:-${result:-.}}
-    open -a /Applications/Sublime\ Text\ 2.app/ ${*:-${result:-.}}
-    # open -a /Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ Text\ 2 ${*:-${result:-.}}
-    
-}
-alias subl="project_aware_subl"
 
 
 ### rvm
 
-#export PATH=$PATH:$HOME/.rvm/bin
-# This loads RVM into a shell session.
-#[[ -s "/Users/jason/.rvm/scripts/rvm" ]] && source "/Users/jason/.rvm/scripts/rvm"
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 
 
 ### rbenv
-export PATH=~/.rbenv/shims:$PATH
-eval "$(rbenv init -)"
+
+#export PATH=~/.rbenv/shims:$PATH
+#eval "$(rbenv init -)"
 
 
 ### path
 
 #export PATH=/usr/local/bin:$PATH
-export PATH=$PATH:/usr/local/git/bin
-export PATH=$PATH:/usr/local/lib/node_modules
-export PATH=$PATH:/usr/local/sbin
+#export PATH=$PATH:/usr/local/git/bin
+#export PATH=$PATH:/usr/local/lib/node_modules
+#export PATH=$PATH:/usr/local/sbin
 
 #export PATH=$PATH:/Applications/MAMP/Library/bin/
-export PATH=/Applications/MAMP/bin/php/php5.2.17/bin:$PATH
+#export PATH=/Applications/MAMP/bin/php/php5.2.17/bin:$PATH
 
-
-
-
-### clover aliases
-
-# top level
-alias cs2='cd ~/Projects/Clover/CS2'
-alias CS2='cd ~/Projects/Clover/CS2'
-alias cs3='cd ~/Projects/Clover/CS3'
-alias CS3='cd ~/Projects/Clover/CS3'
-alias Donations='cd ~/Projects/Clover/Donations'
-alias donations='cd ~/Projects/Clover/Donations'
-
-# main
-alias server-assets='cd ~/Projects/Clover/Server-Assets'
-alias Server-Assets='cd ~/Projects/Clover/Server-Assets'
-alias hubot='cd ~/Projects/Clover/hubot'
-alias Hubot='cd ~/Projects/Clover/hubot'
-alias cloverachiever.com='cd ~/Projects/Clover/CloverAchiever.com'
-alias CloverAchiever.com='cd ~/Projects/Clover/CloverAchiever.com'
-alias speakingofclover.com='cd ~/Projects/Clover/SpeakingOfClover.com'
-alias SpeakingOfClover.com='cd ~/Projects/Clover/SpeakingOfClover.com'
-alias spock='cd ~/Projects/Clover/SpeakingOfClover.com/Deploy/wp-content/themes/spock'
-
-# donations
-alias donation-emailer='cd ~/Projects/Clover/Donations/Donation-Emailer'
-alias Donation-Emailer='cd ~/Projects/Clover/Donations/Donation-Emailer'
-alias donation-center='cd ~/Projects/Clover/Donations/Donation-Center'
-alias Donation-Center='cd ~/Projects/Clover/Donations/Donation-Center'
-alias cloverdonations.com='cd ~/Projects/Clover/Donations/CloverDonations.com'
-alias CloverDonations.com='cd ~/Projects/Clover/Donations/CloverDonations.com'
-alias donation-assets='cd ~/Projects/Clover/Donations/Donation-Assets'
-alias Donation-Assets='cd ~/Projects/Clover/Donations/Donation-Assets'
-alias donation-cron='cd ~/Projects/Clover/Donations/Donation-Cron'
-alias Donation-Cron='cd ~/Projects/Clover/Donations/Donation-Cron'
-alias the-bakery='cd ~/Projects/Clover/Donations/The-Bakery'
-alias The-Bakery='cd ~/Projects/Clover/Donations/The-Bakery'
-
-# CS2
-alias site-assets='cd ~/Projects/Clover/CS2/Site-Assets'
-alias Site-Assets='cd ~/Projects/Clover/CS2/Site-Assets'
-alias site-flash='cd ~/Projects/Clover/CS2/Site-Flash'
-alias Site-Flash='cd ~/Projects/Clover/CS2/Site-Flash'
-alias site-billing='cd ~/Projects/Clover/CS2/Site-Billing'
-alias Site-Billing='cd ~/Projects/Clover/CS2/Site-Billing'
-alias cloversites.com-classic='cd ~/Projects/Clover/CS2/CloverSites.com-classic'
-alias CloverSites.com-classic='cd ~/Projects/Clover/CS2/CloverSites.com-classic'
-alias photosynthesis='cd ~/Projects/Clover/CS2/Photosynthesis'
-alias Photosynthesis='cd ~/Projects/Clover/CS2/Photosynthesis'
-alias shared-photosynthesis-billing='cd ~/Projects/Clover/CS2/Shared-Photosynthesis-Billing'
-alias Shared-Photosynthesis-Billing='cd ~/Projects/Clover/CS2/Shared-Photosynthesis-Billing'
-#alias site-cornerstone='cd ~/Projects/Clover/CS2/Site-Cornerstone'
-#alias Site-Cornerstone='cd ~/Projects/Clover/CS2/Site-Cornerstone'
-#alias splash.clo.do='cd ~/Projects/Clover/CS2/splash.clo.do'
-
-# CS3
-alias api='cd ~/Projects/Clover/CS3/API'
-alias API='cd ~/Projects/Clover/CS3/API'
-alias sites='cd ~/Projects/Clover/CS3/Sites'
-alias Sites='cd ~/Projects/Clover/CS3/Sites'
-alias greenhouse='cd ~/Projects/Clover/CS3/Greenhouse'
-alias Greenhouse='cd ~/Projects/Clover/CS3/Greenhouse'
-alias admin='cd ~/Projects/Clover/CS3/Admin'
-alias Admin='cd ~/Projects/Clover/CS3/Admin'
-alias accounts='cd ~/Projects/Clover/CS3/Accounts'
-alias Accounts='cd ~/Projects/Clover/CS3/Accounts'
-alias team='cd ~/Projects/Clover/CS3/Team'
-alias Team='cd ~/Projects/Clover/CS3/Team'
-alias cloversites.com='cd ~/Projects/Clover/CS3/CloverSites.com'
-alias CloverSites.com='cd ~/Projects/Clover/CS3/CloverSites.com'
-alias dashboard='cd ~/Projects/Clover/CS3/Dashboard'
-alias Dashboard='cd ~/Projects/Clover/CS3/Dashboard'
-
-
-# C66
 
 
 
@@ -372,4 +252,4 @@ fi
 
 
 ### boot2docker
-eval $(docker-machine env default)
+#eval $(docker-machine env default)
