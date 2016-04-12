@@ -63,7 +63,7 @@ alias firefox="open -a firefox"
 alias chrome="open -a google\ chrome\ beta"
 #alias canary="open -a google\ chrome\ canary"
 alias tower="open -a /Applications/Tower.app"
-alias subl="open -a /Applications/Sublime Text.app"
+alias subl="open -a /Applications/Sublime\ Text.app"
 
 export EDITOR='subl -w'
 
