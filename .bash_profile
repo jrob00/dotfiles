@@ -3,9 +3,9 @@
 alias reload='source ~/.bash_profile'
 #alias installclover='bash < <(curl -fsSkL https://raw.github.com/gist/050df7646f8fa704d753)'
 #alias updaterepos='~/Projects/Clover/Server-Assets/Local\ Files/bin/update-all-repositories.sh'
-alias updateshell='(cd ~/Projects/dotfiles/ && git pull && sudo cp -f .bash_profile ~/); reload'
+alias updateshell='(cd ~/Projects/Learning/dotfiles/ && git pull && sudo cp -f .bash_profile ~/); reload'
 #alias updatessh='(cd ~/Projects/dotfiles/ && git pull && cp -f .ssh/config ~/.ssh/); (cd ~/Projects/Clover/Server-Assets/ && git pull && cat Local\ Files/ssh.config >> ~/.ssh/config)'
-alias updatessh='(cd ~/Projects/dotfiles/ && git pull && cp -f .ssh/config ~/.ssh/)'
+alias updatessh='(cd ~/Projects/Learning/dotfiles/ && git pull && cp -f .ssh/config ~/.ssh/)'
 
 
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
@@ -21,16 +21,22 @@ alias -- -="cd -"
 
 alias h='cd ~'
 alias home='cd ~'
+alias me='cd ~'
+
 alias www='cd /var/www'
 alias log='cd /var/www/log'
 alias html='cd /var/www/html'
 alias apache='cd /etc/httpd/conf.d'
-alias dotfiles='cd ~/Projects/dotfiles'
 
 #alias dropbox="cd ~/Dropbox"
 alias projects="cd ~/Projects"
 
+alias my="cd ~/Projects/Learning"
+alias dotfiles="cd ~/Projects/Learning/dotfiles"
+
 alias pm="cd ~/Projects/PennyMac"
+
+
 
 #alias mini="open vnc://DesignAndDevelopment@192.168.1.91"
 #alias next='ssh mini "/usr/bin/osascript -e \"tell app \\\"Rdio\\\" to next track\""'
@@ -171,8 +177,8 @@ showhosts() {
 
 ### rvm
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 
 
@@ -253,3 +259,5 @@ fi
 
 ### boot2docker
 #eval $(docker-machine env default)
+
+source ~/.bashrc
