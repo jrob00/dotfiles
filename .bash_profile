@@ -71,7 +71,7 @@ alias chrome="open -a google\ chrome\ beta"
 alias tower="open -a /Applications/Tower.app"
 alias subl="open -a /Applications/Sublime\ Text.app"
 
-export EDITOR='subl -w'
+export EDITOR='atom -nw'
 
 #if [ -s /usr/bin/firefox ] ; then
 #  unalias firefox
