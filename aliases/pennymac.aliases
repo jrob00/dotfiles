@@ -1,0 +1,5 @@
+# PennyMac Aliases
+# CDPM="cd ~/Projects/PennyMac/"
+
+alias rewards="cd ~/Projects/PennyMac/rewards"
+alias short-form="cd ~/Projects/PennyMac/short-form"

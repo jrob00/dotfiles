@@ -198,7 +198,19 @@ showhosts() {
 #export PATH=$PATH:/Applications/MAMP/Library/bin/
 #export PATH=/Applications/MAMP/bin/php/php5.2.17/bin:$PATH
 
+export PATH=~/.jruby/bin:$PATH
 
+## current path:
+# /Users/jroberts/.jruby/bin
+# /Users/jroberts/.gem/ruby/2.3.1/bin
+# /Users/jroberts/.rubies/ruby-2.3.1/lib/ruby/gems/2.3.0/bin
+# /Users/jroberts/.rubies/ruby-2.3.1/bin
+# /usr/local/bin
+# /usr/bin
+# /bin
+# /usr/sbin
+# /sbin
+# /usr/local/munki
 
 
 
@@ -233,7 +245,7 @@ alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 
-
+alias powpow="powder down && powder up"
 
 
 ### osx aliases
@@ -255,9 +267,18 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 
+# nvm (node version manager)
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
 
 
 ### boot2docker
 #eval $(docker-machine env default)
+
+
+
+### pentaho related
+export PENTAHO_JAVA_HOME="/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 
 source ~/.bashrc
