@@ -281,6 +281,6 @@ export LC_ALL=en_US.UTF-8
 ### pentaho related
 export PENTAHO_JAVA_HOME="/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 
-export PATH="$HOME/.fastlane/bin:$PATH"
+# export PATH="$HOME/.fastlane/bin:$PATH"
 
 source ~/.bashrc
