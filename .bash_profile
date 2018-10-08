@@ -283,4 +283,9 @@ export PENTAHO_JAVA_HOME="/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Co
 
 # export PATH="$HOME/.fastlane/bin:$PATH"
 
+
+### android studio
+export PATH=/Users/jroberts/Library/Android/sdk:$PATH
+
+
 source ~/.bashrc
